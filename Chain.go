@@ -15,12 +15,21 @@ func (c *GodashChain[T]) Value() []T {
 }
 
 func (c *GodashChain[T]) Head() T {
-	return c.data[0]
+	return Head(c.data)
 }
 
 func (c *GodashChain[T]) Map(fn func(T) T) *GodashChain[T] {
-	for i, v := range c.data {
-		c.data[i] = fn(v)
-	}
-	return c
+	return Chain(Map(c.data, fn))
+}
+
+func (c *GodashChain[T]) MapToInt(fn func(T) int) *GodashChain[int] {
+	return Chain(Map(c.data, fn))
+}
+
+func (c *GodashChain[T]) MapToBool(fn func(T) bool) *GodashChain[bool] {
+	return Chain(Map(c.data, fn))
+}
+
+func (c *GodashChain[T]) MapToString(fn func(T) string) *GodashChain[string] {
+	return Chain(Map(c.data, fn))
 }
