@@ -1,0 +1,21 @@
+{
+	"Generate new test template": {
+		"scope": "go",
+		"prefix": "nt",
+		"body": [
+			"package godash_test",
+            "",
+            "import (",
+            "\"testing\"",
+            "",
+            "\"github.com/changchanghwang/godash\"",
+            "\"github.com/stretchr/testify/assert\"",
+			")",
+            "",
+			"func Test${TM_FILENAME_BASE/(.*)_test$/$1/}(t *testing.T) {",
+			"",
+			"}",
+		],
+		"description": "Generate new test template"
+	}
+}

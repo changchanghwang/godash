@@ -1,0 +1,14 @@
+{
+	"Generate new function template": {
+		"scope": "go",
+		"prefix": "nf",
+		"body": [
+			"package godash",
+			"",
+			"func ${1:$TM_FILENAME_BASE}[T comparable](target []T) {",
+			"",
+			"}",
+		],
+		"description": "Generate new function template"
+	}
+}
