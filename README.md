@@ -25,6 +25,7 @@ For now, there is only supported Slice, Array mehotds
   - [Head](#head)
   - [Tail](#tail)
   - [DeepCopySlice](#deppcopyslice)
+  - [Filter](#filter)
 
 #### Slice, Array
 
