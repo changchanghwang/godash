@@ -14,8 +14,11 @@ func (c *GodashChain[T]) Value() []T {
 	return c.data
 }
 
-func (c *GodashChain[T]) Head() T {
+func (c *GodashChain[T]) Head() (T, bool) {
 	return Head(c.data)
+}
+func (c *GodashChain[T]) Tail() (T, bool) {
+	return Tail(c.data)
 }
 
 func (c *GodashChain[T]) Map(fn func(T) T) *GodashChain[T] {
