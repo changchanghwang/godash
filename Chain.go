@@ -36,3 +36,7 @@ func (c *GodashChain[T]) MapToBool(fn func(T) bool) *GodashChain[bool] {
 func (c *GodashChain[T]) MapToString(fn func(T) string) *GodashChain[string] {
 	return Chain(Map(c.data, fn))
 }
+
+func (c *GodashChain[T]) Filter(fn func(T) bool) *GodashChain[T] {
+	return Chain(Filter(c.data, fn))
+}

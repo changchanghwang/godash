@@ -64,3 +64,14 @@ import "github.com/changchanghwang/godash"
 arr := []int{1,2,3,4,5}
 godash.Head(arr) // []int{1,2,3,4,5}
 ```
+
+##### Filter
+
+```go
+import "github.com/changchanghwang/godash"
+
+arr := []int{1,2,3,4,5}
+godash.Filter(arr, func(v int) bool {
+  return v > 3
+}) // []int{4,5}
+```
