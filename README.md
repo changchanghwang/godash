@@ -65,12 +65,12 @@ godash.Chain([]int{}).Head() // 0, false
 import "github.com/changchanghwang/godash"
 
 // with chain
-godash.Tail([]int{1,2,3,4,5}) // 5, true
-godash.Tail([]int{}) // 0, false
+godash.Tail([]int{1,2,3,4,5}) // []int{2,3,4,5}
+godash.Tail([]int{}) // []int{}
 
 // with chain
-godash.Chain([]int{1,2,3,4,5}).Tail() // 5, true
-godash.Chain([]int{}).Tail() // 0, false
+godash.Chain([]int{1,2,3,4,5}).Tail() // []int{2,3,4,5}
+godash.Chain([]int{}).Tail() // []int{}
 ```
 
 ##### DeepCopySlice

@@ -17,7 +17,7 @@ func (c *GodashChain[T]) Value() []T {
 func (c *GodashChain[T]) Head() (T, bool) {
 	return Head(c.data)
 }
-func (c *GodashChain[T]) Tail() (T, bool) {
+func (c *GodashChain[T]) Tail() []T {
 	return Tail(c.data)
 }
 
