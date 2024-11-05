@@ -22,7 +22,7 @@ func TestTail(t *testing.T) {
 
 	t.Run("With Chain struct", func(t *testing.T) {
 		t.Run("should return the elements except first of the chaining slice", func(t *testing.T) {
-			result := godash.Chain([]int{}).Tail()
+			result := godash.Chain([]int{}).Tail().Value()
 			assert.Equal(t, []int{}, result)
 		})
 	})
