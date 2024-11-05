@@ -1,11 +1,11 @@
 package godash
 
-func Tail[T comparable](target []T) (T, bool) {
+func Tail[T comparable](target []T) T {
 	var zero T
 
 	if len(target) == 0 {
-		return zero, false
+		return zero
 	}
 
-	return target[len(target)-1], true
+	return target[len(target)-1]
 }
