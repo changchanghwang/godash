@@ -43,7 +43,8 @@ godash.Map([]int{1,2,3,4,5}, func(v int) int {
 ```go
 import "github.com/changchanghwang/godash"
 
-godash.Head([]int{1,2,3,4,5}) // 1
+godash.Head([]int{1,2,3,4,5}) // 1, true
+godash.Head([]int{}) // 0, false
 ```
 
 ##### Tail
@@ -51,7 +52,8 @@ godash.Head([]int{1,2,3,4,5}) // 1
 ```go
 import "github.com/changchanghwang/godash"
 
-godash.Tail([]int{1,2,3,4,5}) // 5
+godash.Tail([]int{1,2,3,4,5}) // 5, true
+godash.Tail([]int{}) // 0, false
 ```
 
 ##### DeppCopySlice
