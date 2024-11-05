@@ -20,6 +20,12 @@ import "github.com/changchanghwang/godash"
 
 For now, there is only supported Slice, Array mehotds
 
+- [Slice, Array](#slice-array)
+  - [Map](#map)
+  - [Head](#head)
+  - [Tail](#tail)
+  - [DeepCopySlice](#deppcopyslice)
+
 #### Slice, Array
 
 ##### Map
@@ -37,7 +43,17 @@ godash.Map([]int{1,2,3,4,5}, func(v int) int {
 ```go
 import "github.com/changchanghwang/godash"
 
-godash.Head([]int{1,2,3,4,5}) // 1
+godash.Head([]int{1,2,3,4,5}) // 1, true
+godash.Head([]int{}) // 0, false
+```
+
+##### Tail
+
+```go
+import "github.com/changchanghwang/godash"
+
+godash.Tail([]int{1,2,3,4,5}) // 5, true
+godash.Tail([]int{}) // 0, false
 ```
 
 ##### DeppCopySlice
