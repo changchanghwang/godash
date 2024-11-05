@@ -9,24 +9,26 @@ import (
 )
 
 func TestMap(t *testing.T) {
-	t.Run("It should return a new slice with the function applied to each element", func(t *testing.T) {
-		arr := []int{1, 2, 3, 4, 5}
-		result := godash.Map(arr, func(v int) int {
-			return v * 2
+	t.Run("Without Chain struct", func(t *testing.T) {
+		t.Run("It should return a new slice with the function applied to each element", func(t *testing.T) {
+			arr := []int{1, 2, 3, 4, 5}
+			result := godash.Map(arr, func(v int) int {
+				return v * 2
+			})
+
+			assert.Equal(t, []int{2, 4, 6, 8, 10}, result)
+			assert.Equal(t, []int{1, 2, 3, 4, 5}, arr)
 		})
 
-		assert.Equal(t, []int{2, 4, 6, 8, 10}, result)
-		assert.Equal(t, []int{1, 2, 3, 4, 5}, arr)
-	})
+		t.Run("It should return a new slice with the function applied to each element - to other type", func(t *testing.T) {
+			arr := []int{1, 2, 3, 4, 5}
+			result := godash.Map(arr, func(v int) bool {
+				return v%2 == 0
+			})
 
-	t.Run("It should return a new slice with the function applied to each element - to other type", func(t *testing.T) {
-		arr := []int{1, 2, 3, 4, 5}
-		result := godash.Map(arr, func(v int) bool {
-			return v%2 == 0
+			assert.Equal(t, []bool{false, true, false, true, false}, result)
+			assert.Equal(t, []int{1, 2, 3, 4, 5}, arr)
 		})
-
-		assert.Equal(t, []bool{false, true, false, true, false}, result)
-		assert.Equal(t, []int{1, 2, 3, 4, 5}, arr)
 	})
 
 	t.Run("With Chain struct", func(t *testing.T) {
